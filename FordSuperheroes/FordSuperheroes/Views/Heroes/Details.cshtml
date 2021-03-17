@@ -1,0 +1,49 @@
+﻿@model FordSuperheroes.Models.Hero
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "Index";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Hero</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HeroName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HeroName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HeroMainPowers)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HeroMainPowers)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HeroSecondaryPowers)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HeroSecondaryPowers)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HeroAlias)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HeroAlias)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CatchPhrase)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CatchPhrase)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
