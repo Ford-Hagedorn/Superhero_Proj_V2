@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace FordSuperheroes.Data.Migrations
+namespace FordSuperheroes.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210316194335_initial")]
-    partial class initial
+    [Migration("20210317191358_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,13 +31,13 @@ namespace FordSuperheroes.Data.Migrations
                     b.Property<string>("CatchPhrase")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HeroName")
+                    b.Property<string>("HeroAlias")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HeroMainPowers")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HeroAlias")
+                    b.Property<string>("HeroName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HeroSecondaryPowers")

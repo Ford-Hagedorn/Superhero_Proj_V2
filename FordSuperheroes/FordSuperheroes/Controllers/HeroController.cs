@@ -45,7 +45,7 @@ namespace FordSuperheroes.Controllers
                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception e)
             {
                 return View();
             }
