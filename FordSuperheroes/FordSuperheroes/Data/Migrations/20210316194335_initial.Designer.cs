@@ -34,13 +34,13 @@ namespace FordSuperheroes.Data.Migrations
                     b.Property<string>("HeroName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HeroPowers")
+                    b.Property<string>("HeroMainPowers")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HeroRealName")
+                    b.Property<string>("HeroAlias")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HeroSubPowers")
+                    b.Property<string>("HeroSecondaryPowers")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
