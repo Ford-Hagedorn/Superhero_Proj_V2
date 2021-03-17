@@ -17,9 +17,10 @@ namespace FordSuperheroes.Controllers
             _context = context;
         }
         // GET: HeroController
-        public ActionResult Index()
+        public ActionResult HeroIndex()
         {
-            return View();
+            var heroes = _context.Superhero;
+            return View(heroes);
         }
 
         // GET: HeroController/Details/5
@@ -43,7 +44,7 @@ namespace FordSuperheroes.Controllers
             {
                 _context.Superhero.Add(hero);
                 _context.SaveChanges();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("HeroIndex");
             }
             catch(Exception e)
             {
@@ -60,11 +61,14 @@ namespace FordSuperheroes.Controllers
         // POST: HeroController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Hero hero)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _context.Superhero.Remove(hero);
+                _context.Superhero.Add(hero);
+                _context.SaveChanges();
+                return RedirectToAction("HeroIndex");
             }
             catch
             {
@@ -81,11 +85,13 @@ namespace FordSuperheroes.Controllers
         // POST: HeroController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Hero hero)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _context.Superhero.Remove(hero);
+                _context.SaveChanges();
+                return RedirectToAction("HeroIndex");
             }
             catch
             {
