@@ -17,16 +17,17 @@ namespace FordSuperheroes.Controllers
             _context = context;
         }
         // GET: HeroController
-        public ActionResult HeroIndex()
+        public ActionResult Index()
         {
-            var heroes = _context.Superhero;
+            var heroes = _context.Superhero.ToList();
             return View(heroes);
         }
 
         // GET: HeroController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var heroId = _context.Superhero.Find(id);
+            return View(heroId);
         }
 
         // GET: HeroController/Create
@@ -44,11 +45,11 @@ namespace FordSuperheroes.Controllers
             {
                 _context.Superhero.Add(hero);
                 _context.SaveChanges();
-                return RedirectToAction("HeroIndex");
+                return RedirectToAction("Index");
             }
-            catch(Exception e)
+            catch
             {
-                return View();
+                return RedirectToAction("Index");
             }
         }
 
@@ -68,7 +69,7 @@ namespace FordSuperheroes.Controllers
                 _context.Superhero.Remove(hero);
                 _context.Superhero.Add(hero);
                 _context.SaveChanges();
-                return RedirectToAction("HeroIndex");
+                return RedirectToAction("Index");
             }
             catch
             {
@@ -91,7 +92,7 @@ namespace FordSuperheroes.Controllers
             {
                 _context.Superhero.Remove(hero);
                 _context.SaveChanges();
-                return RedirectToAction("HeroIndex");
+                return RedirectToAction("Index");
             }
             catch
             {
