@@ -43,7 +43,7 @@ namespace FordSuperheroes.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Superhero");
+                    b.ToTable("Heroes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

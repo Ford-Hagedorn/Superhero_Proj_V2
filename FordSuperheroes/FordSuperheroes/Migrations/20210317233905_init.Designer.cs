@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FordSuperheroes.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210317191358_init")]
+    [Migration("20210317233905_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,7 +45,7 @@ namespace FordSuperheroes.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Superhero");
+                    b.ToTable("Heroes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

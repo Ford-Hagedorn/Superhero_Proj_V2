@@ -47,7 +47,7 @@ namespace FordSuperheroes.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Superhero",
+                name: "Heroes",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -60,7 +60,7 @@ namespace FordSuperheroes.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Superhero", x => x.Id);
+                    table.PrimaryKey("PK_Heroes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -227,7 +227,7 @@ namespace FordSuperheroes.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Superhero");
+                name: "Heroes");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

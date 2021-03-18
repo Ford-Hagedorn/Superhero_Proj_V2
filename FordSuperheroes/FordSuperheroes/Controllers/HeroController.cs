@@ -19,7 +19,7 @@ namespace FordSuperheroes.Controllers
         // GET: HeroController
         public ActionResult Index()
         {
-            var heroes = _context.Heroes;
+            var heroes = _context.Heroes.ToList();
             return View(heroes);
         }
 
