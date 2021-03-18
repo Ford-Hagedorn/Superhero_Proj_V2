@@ -15,18 +15,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.HeroName)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HeroMainPowers)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HeroSecondaryPowers)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HeroAlias)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CatchPhrase)
-            </th>
+           
             <th></th>
         </tr>
     </thead>
@@ -36,18 +25,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.HeroName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HeroMainPowers)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HeroSecondaryPowers)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HeroAlias)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CatchPhrase)
-            </td>
+            
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
